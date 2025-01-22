@@ -137,7 +137,7 @@ body {
     display: flex;
     align-items: flex-end;
     padding: 16px 22px;
-    /background-repeat: no-repeat;
+    background-repeat: no-repeat;
     background-size: contain;
     /background-position: right top;
     position: relative;
@@ -776,9 +776,42 @@ p {
 
 
 @media  (min-width: 641px) and (max-width: 1200px) {
+    .header {
+        padding-top: 44px;
+        padding-bottom: 115px;
+    }
+    .header-menu {
+        display: flex;
+        justify-content: space-between;
+        max-width: 700px;
+        margin: 0 auto;
+
+        background-image: url("images/burger-menu5.svg");
+        background-repeat: no-repeat;
+        background-position: right  center;
+        background-size: 30px;
+    }
+    .logo {
+        width: 158px;
+    }
+    .menu__list {
+        display: none;
+    }
+    .header__title {
+        width: 620px;
+        margin: 85px auto 0;
+        font-size: 40px;
+        line-height: 1.375;
+    }
+    .now-trends {
+        max-width: 830px;
+    }
     .trends {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+    }
+    .main__content {
+        width: 381px;
     }
     .products {
         flex-wrap: wrap;
@@ -795,9 +828,15 @@ p {
 }
 
 @media (max-width: 640px) {
+    .now-trends {
+        max-width: 415px;
+    }
     .trends {
         display: grid;
         grid-template-columns: 1fr;
+    }
+    .main__content {
+        width: 381px;
     }
     .products {
         flex-wrap: wrap;
@@ -809,7 +848,9 @@ p {
         margin-top: 40px;
     }
     .article {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     .side-bar {
         display: none;
