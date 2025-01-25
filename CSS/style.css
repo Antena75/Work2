@@ -453,7 +453,7 @@ p {
 }
 
 .shop {
-    max-width: 1152px;
+    max-width: 1124px;
     margin: 58px auto;
 }
 
@@ -474,21 +474,38 @@ p {
 }
 
 .products {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 15px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 110px;
 }
 
 .product {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: calc((100% - 219px) / 3);
+    /width: 301px;
 }
 
 .product__img {
-    display: block;
-    /width: 100%;
+    width: 301px;
+    min-height: 204px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right top;
+    position: relative;
+    z-index: -1;
+}
+
+.product__img1 {
+    background-image: url("images/shop-item-desk1.jpg");
+}
+
+.product__img2 {
+    background-image: url("images/shop-item-desk2.jpg");
+}
+
+.product__img3 {
+    background-image: url("images/shop-item-desk3.jpg");
 }
 
 .product__content {
@@ -777,83 +794,444 @@ p {
 
 @media  (min-width: 641px) and (max-width: 1200px) {
     .header {
-        padding-top: 44px;
-        padding-bottom: 115px;
+        padding-top: 43px;
+        padding-bottom: 113px;
+        background-image: url("images/banner-bg-tablet.jpg");
+        background-size: cover;
     }
+
     .header-menu {
-        display: flex;
-        justify-content: space-between;
         max-width: 700px;
         margin: 0 auto;
-
         background-image: url("images/burger-menu5.svg");
         background-repeat: no-repeat;
-        background-position: right  center;
+        background-position: right center;
         background-size: 30px;
     }
+
     .logo {
         width: 158px;
     }
+
     .menu__list {
         display: none;
     }
+
     .header__title {
         width: 620px;
         margin: 85px auto 0;
         font-size: 40px;
         line-height: 1.375;
     }
+
     .now-trends {
         max-width: 830px;
+        margin: 44px auto;
     }
+
+    .trends__title {
+        padding-left: 0;
+        margin-bottom: 20px;
+        font-size: 18px;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
     .trends {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
-    .main__content {
-        width: 381px;
+
+    .trend {
+        min-height: 214px;
+        padding: 16px 22px;
+        background-size: cover;
+        background-position: center bottom;
     }
-    .products {
-        flex-wrap: wrap;
+
+    .trend__content {
+        padding: 31px 31px;
     }
-    .product {
-        width: 50%;
+
+    .trend__title {
+        font-size: 17px;
+        line-height: 1.294;
     }
-    .product:nth-child(n + 3) {
-        margin-top: 40px;
+
+    .container {
+        padding: 0;
+        margin: 46px auto;
+        max-width: 698px;
     }
+
     .article {
         display: block;
     }
-}
 
-@media (max-width: 640px) {
-    .now-trends {
-        max-width: 415px;
+    .article__img {
+        /padding-top: 6px;
+        /object-fit: cover;
+        width: 392px;
     }
-    .trends {
-        display: grid;
-        grid-template-columns: 1fr;
-    }
+
     .main__content {
-        width: 381px;
+        margin-left: 0;
+        width: 392px;
     }
+
+    .category__list {
+        display: flex;
+        margin: 0;
+        margin-top: 5px;
+        margin-bottom: 7px;
+    }
+
+    .article__title {
+        font-size: 17px;
+        line-height: 1.294;
+    }
+
+    .data {
+        margin: 30px 0 30px;
+    }
+
+    .shop {
+        max-width: 652px;
+        margin: 52px auto;
+    }
+
+    .shop__title {
+        margin-bottom: 27px;
+        font-size: 18px;
+    }
+
     .products {
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 67px;
+        row-gap: 62px;
     }
+
     .product {
-        width: 100%;
-    }
-    .product:nth-child(n + 2) {
-        margin-top: 40px;
-    }
-    .article {
         display: flex;
         flex-direction: column;
         align-items: center;
+        width: 290px;
     }
-    .side-bar {
+
+    .product__img {
+        width: 290px;
+        min-height: 227px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: right top;
+        position: relative;
+        z-index: -1;
+    }
+
+    .product__img1 {
+        background-image: url("images/shop-item-tablet1.jpg");
+    }
+
+    .product__img2 {
+        background-image: url("images/shop-item-tablet2.jpg");
+    }
+
+    .product__img3 {
+        background-image: url("images/shop-item-tablet3.jpg");
+    }
+
+    .product__content {
+        width: 290px;
+        padding: 34px 0px 5px;
+        outline: 3px solid #b59f5b;
+        outline-offset: 20px;
+        flex-grow: 1;
+        margin: -14px;
+    }
+
+    .product__title {
+        font-size: 17px;
+        text-transform: uppercase;
+        color: #000;
+        margin-bottom: 3px;
+    }
+
+    .product__link {
+        color: #b59f5b;
+    }
+
+    .product__footer {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+    /flex-wrap: wrap;
+    }
+
+    .product__prices {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+    .product__price {
+        font-size: 20px;
+        margin-bottom: 4px;
+        margin-top: -4px;
+    }
+
+    .product__price_old {
+        text-decoration: line-through;
+        font-size: 14px;
+    }
+
+    .product__button {
+        border: none;
+        background-color: #b59f5b;
+        cursor: pointer;
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: bold;
+        width: 140px;
+        height: 50px;
+        color: white;
+    }
+    .adress {
+        max-width: 696px;
+        margin: 88px auto 47px;
+    }
+
+}
+
+@media (max-width: 640px) {
+    .header {
+        padding-top: 43px;
+        padding-bottom: 250px;
+        background-image: url("images/banner-mobile.jpg");
+        background-size: cover;
+    }
+
+    .header-menu {
+        max-width: 360px;
+        margin: 0 auto;
+        background-image: url("images/burger-menu5.svg");
+        background-repeat: no-repeat;
+        background-position: right center;
+        background-size: 30px;
+    }
+
+    .logo {
+        width: 158px;
+    }
+
+    .menu__list {
         display: none;
+    }
+
+    .header__title {
+        width: 360px;
+        margin: 85px auto 0;
+        font-size: 40px;
+        line-height: 1.375;
+    }
+
+    .now-trends {
+        max-width: 360px;
+        margin: 38px auto;
+    }
+
+    .trends__title {
+        padding-left: 0px;
+        margin-bottom: 22px;
+        font-size: 16px;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .trends {
+        grid-template-columns: 1fr;
+    }
+
+    .trend {
+        min-height: 199px;
+        padding: 16px 22px;
+        background-size: cover;
+        background-position: center bottom;
+    }
+
+    .trend__content {
+        padding: 31px 31px;
+    }
+
+    .trend__title {
+        font-size: 17px;
+        line-height: 1.294;
+    }
+
+    .container {
+        padding: 0;
+        margin: 38px auto;
+        max-width: 360px;
+        display: block;
+    }
+
+    .articles {
+        max-width: 360px;
+        /margin: 0 auto;
+        display: block;
+    }
+
+    .article {
+        display: flex;
+        margin: 0 auto;
+    }
+
+    .article:nth-child(n + 2) {
+        margin-top: 41px;
+    }
+
+    .article__img {
+    /padding-top: 6px;
+    /object-fit: cover;
+        max-width: 127px;
+        display: flex;
+        margin: 0 auto;
+
+    }
+
+    .main__content {
+        max-width: 330px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    .category__list {
+        display: flex;
+        margin: 0;
+        margin-top: 10px;
+        margin-bottom: 7px;
+    }
+
+    .article__title {
+        font-size: 16px;
+        line-height: 1.294;
+    }
+
+    .data {
+        margin: 17px 0 11px;
+    }
+
+    .side-bar {
+        max-width: 360px;
+        margin: 52px auto;
+    }
+
+    .shop {
+        max-width: 360px;
+        margin: 52px auto;
+    }
+
+    .shop__title {
+        margin-bottom: 27px;
+        font-size: 14px;
+    }
+
+    .products {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 67px;
+        row-gap: 62px;
+    }
+
+    .product {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 290px;
+    }
+
+    .product__img {
+        width: 290px;
+        min-height: 227px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: right top;
+        position: relative;
+        z-index: -1;
+    }
+
+    .product__img1 {
+        background-image: url("images/shop-item-mobile1.jpg");
+    }
+
+    .product__img2 {
+        background-image: url("images/shop-item-mobile2.jpg");
+    }
+
+    .product__img3 {
+        background-image: url("images/shop-item-mobile3.jpg");
+    }
+
+    .product__content {
+        width: 290px;
+        padding: 34px 0px 5px;
+        outline: 3px solid #b59f5b;
+        outline-offset: 20px;
+        flex-grow: 1;
+        margin: -14px;
+    }
+
+    .product__title {
+        font-size: 17px;
+        text-transform: uppercase;
+        color: #000;
+        margin-bottom: 3px;
+    }
+
+    .product__link {
+        color: #b59f5b;
+    }
+
+    .product__footer {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+    /flex-wrap: wrap;
+    }
+
+    .product__prices {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+    .product__price {
+        font-size: 20px;
+        margin-bottom: 4px;
+        margin-top: -4px;
+    }
+
+    .product__price_old {
+        text-decoration: line-through;
+        font-size: 14px;
+    }
+
+    .product__button {
+        border: none;
+        background-color: #b59f5b;
+        cursor: pointer;
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: bold;
+        width: 140px;
+        height: 50px;
+        color: white;
+    }
+    .adress {
+        max-width: 696px;
+        margin: 88px auto 47px;
     }
 }
 
