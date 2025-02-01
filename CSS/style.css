@@ -1097,7 +1097,7 @@ p {
 
     .trend__title {
         padding-right: 10px;
-        font-size: 17px;
+        font-size: 16px;
         line-height: 1.294;
     }
 
@@ -1373,8 +1373,8 @@ p {
     }
 
     .trend__title {
-        font-size: 16px;
-        padding-right: 10px;
+        /font-size: 16px;
+        padding-right: 0;
     }
 }
 
